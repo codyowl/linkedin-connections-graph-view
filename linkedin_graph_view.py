@@ -2,7 +2,7 @@ import yaml
 import requests
 import string
 import random
-
+from neo4j_driver import HelloWorldExample
 
 class LinkedConnectionsGraphView:
 	def __init__(self):
@@ -50,11 +50,14 @@ class LinkedConnectionsGraphView:
 		access_token = self.get_access_token()
 		params = {'oauth2_access_token': access_token}      
 		response = requests.get(self.linkedin_my_details_api, params = params) 
+
+
 		
 
 
 if __name__ == "__main__":
 	linkedin_graph_view = LinkedConnectionsGraphView()
-	linkedin_graph_view.linkedin_auth()
+	# linkedin_graph_view.linkedin_auth()
 	linkedin_graph_view.get_my_details()
+	neo4j_driver = Neo4jDriver()
 
